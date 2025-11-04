@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Antique Venture — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(#dcdcdc, #ffffff);
+      font-family: "Courier New", Courier, monospace;
+      color: #000;
+      margin: 0;
+      padding: 8px;
+      position: relative;
+    }
+
+    .container {
+      width: 900px;
+      max-width: 96%;
+      margin: 12px auto;
+      border: 4px double #000;
+      padding: 12px;
+      background: #f6f6f6;
+    }
+
+    header { display: flex; align-items: center; margin-bottom: 12px; }
+    h1 { font-size: 36px; margin: 0; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+    .et-image { width: 50px; height: 50px; background: url('https://upload.wikimedia.org/wikipedia/commons/4/4a/E.T._video_game_atari_2600.png') no-repeat center/contain; animation: runET 4s linear infinite; }
+    @keyframes runET { 0% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 100% { transform: translateX(-10px); } }
+    .tagline { font-size: 12px; color: #444; margin-left: 60px; }
+    main { display: grid; grid-template-columns: 1fr 280px; gap: 12px; margin-top: 12px; }
+    .card { border: 2px solid #000; padding: 8px; background: #fffdf6; min-height: 120px; }
+    .section-title { font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 8px; border-bottom: 2px dashed #bbb; padding-bottom: 6px; }
+    .episode-list { list-style: none; padding: 0; margin: 0; }
+    .episode-list li { margin-bottom: 6px; }
+    footer { margin-top: 12px; padding: 8px; border-top: 2px solid #000; font-size: 12px; color: #333; text-align: center; }
+    .marquee { margin: 8px 0; }
+    @media (max-width:760px){ main { grid-template-columns: 1fr; } }
+    .contact-form { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+    .contact-form input, .contact-form textarea, .contact-form button { padding: 6px; font-family: "Courier New", monospace; font-size: 12px; border: 2px solid #000; background: #fffdf6; }
+    .contact-form button { cursor: pointer; font-weight: bold; }
+
+    #thanks-message {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      height: 50px;
+      border: 2px solid #000;
+      background: #ffffff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #social-links {
+      font-size: 8px;
+      text-align: center;
+      margin-top: 4px;
+      color: #111;
+    }
+
+    .next-videos { font-size: 10px; margin-top: 6px; }
+    .like-button { margin-top: 6px; padding: 6px 12px; font-size: 12px; font-weight: bold; background: #ffffff; border: 2px solid #000; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="et-image"></div>
+      <h1>ANTIQUE VENTURE</h1>
+    </header>
+    <div class="tagline">Digging through the past, one cartridge at a time.</div>
+    <div class="tagline">Last updated: Nov 3, 2025</div>
+    <div class="marquee">
+      <marquee behavior="scroll" direction="left" scrollamount="6">Welcome to Antique Venture — retro reviews, restoration projects, and movie rants. New videos posted on YouTube (@AntiqueVenture)!</marquee>
+    </div>
+    <main>
+      <section class="card" id="videos">
+        <div class="section-title">Videos — Reviews (Episodes)</div>
+        <p>Below is a chronological list of review episodes. All new videos are posted on <a href="https://www.youtube.com/@AntiqueVenture" target="_blank">YouTube @AntiqueVenture</a>. The top-most entry is the most recent.</p>
+        <ol class="episode-list">
+          <li>Episode 1 — <em>Yoda Stories (Review & GameBoy Colour)</em> — <a href="https://www.youtube.com/watch?v=j_uTx7YYpAE" target="_blank">Watch here</a></li>
+          <li>Episode 2 — <em>E.T. on the 2600 (Review)</em> — <a href="https://www.youtube.com/watch?v=m2YZIgTuHeY" target="_blank">Watch here</a></li>
+          <li>Episode 3 — <em>Last Battle on Mega Drive (Review)</em> — <a href="https://www.youtube.com/watch?v=Zg3H0dIhj70&t=14s" target="_blank">Watch here</a></li>
+        </ol>
+        <hr>
+        <p><strong>Latest video:</strong></p>
+        <div style="text-align:center;">
+          <a href="https://www.youtube.com/watch?v=Zg3H0dIhj70&t=14s" target="_blank">
+            <img src="https://img.youtube.com/vi/Zg3H0dIhj70/maxresdefault.jpg" alt="Latest video thumbnail" width="560" height="315" style="border:2px solid #000;">
+          </a>
+          <br>
+          <button class="like-button" onclick="toggleLike()">Like</button>
+          <span id="like-count">0</span> Likes
+        </div>
+        <div class="next-videos">
+          <p><strong>Next Videos Coming Up:</strong></p>
+          <ul>
+            <li>Splatterhouse 2</li>
+            <li>Doctor Who: Return to Earth</li>
+            <li>Space Ace</li>
+            <li>Star Wars: Jedi Arena</li>
+          </ul>
+          <p style="font-size:8px;">Have suggestions? Leave them in the YouTube comment section or email me.</p>
+        </div>
+      </section>
+      <section class="card" id="blog">
+        <div class="section-title">Blog / Updates</div>
+        <p><strong>Recently released:</strong> Welcome to the new Antique Venture website! Stay tuned for updates on my game room, film collection, and restoration projects.</p>
+        <p><strong>Favourite Games:</strong> Adventure (Atari 2600), Sonic (Mega Drive), Ghouls 'n Ghosts (Mega Drive), Resident Evil (PlayStation)</p>
+        <p><strong>Worst Games:</strong> Yoda Stories (GameBoy Colour), E.T. (Atari 2600)</p>
+        <p><strong>My Games Collection:</strong> 255 Games across 12 Consoles</p>
+      </section>
+      <section class="card" id="stats">
+        <div class="section-title">Site Stats</div>
+        <p>Total Episodes Reviewed: 3</p>
+        <p>Total Games Reviewed: 3</p>
+        <p>Total Blog Posts: 1</p>
+      </section>
+      <section class="card" id="contact">
+        <div class="section-title">Leave a Message</div>
+        <form class="contact-form" action="mailto:bodiemorgan1@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>© 2025-26 Antique Venture</p>
+      <div id="social-links">Visit me on YouTube: @AntiqueVenture | Glomble: @AntiqueVenture | Odysee: @AntiqueVenture</div>
+    </footer>
+  </div>
+
+  <div id="thanks-message">Thanks for Visiting!</div>
+
+  <script>
+    let likeCount = 0;
+    let liked = false;
+    function toggleLike() {
+      const likeDisplay = document.getElementById('like-count');
+      if (!liked) {
+        likeCount += 1;
+        liked = true;
+      } else {
+        likeCount -= 1;
+        liked = false;
+      }
+      likeDisplay.innerText = likeCount;
+    }
+  </script>
+</body>
+</html>
